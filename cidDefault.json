@@ -1,11 +1,11 @@
 {
-    "0": {
-        "name": "Baby Cid",
-        "link": "https://i.imgur.com/WZ2b6wQ.jpg",
-        "claimed": true,
-        "owner": "Manaro"
+    "0" : {
+        "name" : "Baby Cid",
+        "link" : "https://i.imgur.com/WZ2b6wQ.jpg",
+        "claimed" : false,
+        "owner" : ""
     },
-    "1": {
+    "1" : {
         "name": "Corporate Cid",
         "link": "https://i.imgur.com/Qo2XCEo.png",
         "claimed": false,

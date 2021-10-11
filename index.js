@@ -2,7 +2,6 @@ const fs = require('fs');
 const { Client, Collection, Intents } = require('discord.js');
 const { token } = require('./config.json');
 
-
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 
@@ -24,7 +23,6 @@ for (const file of commandFiles) {
 	client.commands.set(command.data.name, command);
 }
 
-
 client.on('interactionCreate', async interaction => {
 	if (interaction.isCommand()) {
 
@@ -41,15 +39,8 @@ client.on('interactionCreate', async interaction => {
 		}
 	}
 
-
 	else {return;}
 
 });
-
-/* client.on('interactionCreate', async interaction => {
-	if (!interaction.isButton()) return;
-	console.log(interaction);
-}); */
-
 
 client.login(token);
