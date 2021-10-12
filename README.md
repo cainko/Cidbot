@@ -6,8 +6,8 @@
   <br />
   <p>
     <a href="https://discord.gg/ftwB68m"><img src="https://img.shields.io/discord/322519435963269123?color=5865F2&logo=discord&logoColor=white&style=for-the-badge" alt="Discord server" /></a>
-    <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/manaro_wow?style=for-the-badge&logo=twitter&logoColor=white&color=00acee">
-     <img alt="GitHub" src="https://img.shields.io/github/license/cainko/Cidbot?style=for-the-badge">
+    <a href="https://twitter.com/manaro_wow"><img src="https://img.shields.io/twitter/follow/manaro_wow?style=for-the-badge&logo=twitter&logoColor=white&color=00acee"></a>
+     <img src="https://img.shields.io/github/license/cainko/Cidbot?style=for-the-badge">
   </p>
 </div>
 
