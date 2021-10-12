@@ -1,3 +1,5 @@
+// Run file to register commands for guild at guildId.
+
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const { token, clientId, guildId } = require('./config.json');
@@ -18,7 +20,7 @@ const rest = new REST({ version: '9' }).setToken(token);
         console.log('Started refreshing application (/) commands.');
 
         await rest.put(
-            Routes.applicationGuildCommands(clientId, guildId),
+            Routes.applicationGuildCommands(clientId, guildId), // Change this line to register global commands when done developing.
             { body: commands },
         );
 
