@@ -13,7 +13,7 @@
 
 ## About
 
-Cidbot is a personal project bot that utilizes [Discord.js](https://discord.js.org/#/) interact with the [Discord API](https://discord.com/developers/docs/intro). I have added commands that I think are fun and/or useful to my community. Cidbot uses slash commands for interactions. These commands currently include:
+Cidbot is a personal project bot that utilizes [Discord.js](https://discord.js.org/#/) to interact with the [Discord API](https://discord.com/developers/docs/intro). I have added commands that I think are fun and/or useful to my community. Cidbot uses slash commands for interactions. These commands currently include:
 
 - /roll - Allows users to claim pictures of my cat Cid ("Cid Pics") for themselves.
 - /im - Allows users to look up information on a specific Cid Pic.
