@@ -25,7 +25,8 @@ module.exports = {
                 claimDesc = claimDesc + cidRoll[i] + '\n'
             }
             // Create embed for message and send message
-            const embed = new MessageEmbed()
+            const { EmbedBuilder } = require("discord.js");
+            const embed = new EmbedBuilder()
                 .setTitle(`${user}'s claims`)
                 .setDescription(claimDesc)
 

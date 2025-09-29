@@ -37,11 +37,12 @@ module.exports = {
         }
 
         // Create embed for message and send message
-        const embed = new MessageEmbed()
+        const { EmbedBuilder } = require("discord.js");
+        const embed = new EmbedBuilder()
             .setColor('#0099ff')
             .setTitle(cidRoll.name)
             .setImage(cidRoll.link)
-            .setFooter(footer);
+            .setFooter({text : footer});
 
         await interaction.reply({ embeds: [embed] });
         }

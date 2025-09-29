@@ -1,7 +1,7 @@
 // This command will randomly choose an element from a json file and allow
 // users to claim for themselves.s
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageActionRow, MessageEmbed, MessageButton } = require('discord.js');
+const { MessageActionRow, MessageEmbed, MessageButton, ButtonComponent, ButtonStyle } = require('discord.js');
 const wait = require('util').promisify(setTimeout);
 const fs = require('fs');
 
@@ -15,21 +15,23 @@ module.exports = {
 		const index = Math.floor(Math.random() * 14);
 		const cidRoll = db[index];
 		var claim = `Claim`;
-		var footer = ``;
-		var style = `PRIMARY`;
-		var disable = `false`;
+		var footer = null;
+		var style = 'Primary';
+		var disable = false;
 		
 		// Display info if claimed.
 		if (cidRoll.claimed == true) {
 			claim = `CLAIMED`;
-			style = `SECONDARY`;
+			style = 'Secondary';
 			disable = true;
 		}
 
 		// Button creator
-		const row = new MessageActionRow()
+		const { ActionRowBuilder } = require("discord.js");
+		const { ButtonBuilder } = require("discord.js");
+		const row = new ActionRowBuilder()
 			.addComponents(
-				claim = new MessageButton()
+				claim = new ButtonBuilder()
 					.setDisabled(disable)
 					.setCustomId(cidRoll.name)
 					.setLabel(claim)
@@ -40,11 +42,12 @@ module.exports = {
 		}
 		
 		// Embed creator
-		const embed = new MessageEmbed()
+		const { EmbedBuilder } = require("discord.js");
+		const embed = new EmbedBuilder()
 			.setColor('#0099ff')
 			.setTitle(cidRoll.name)
 			.setImage(cidRoll.link)
-			.setFooter(footer);
+			.setFooter({ text: footer});
 
 		// Send interaction reply in channel
 		await interaction.reply({ embeds: [embed], components: [row] });
@@ -56,14 +59,22 @@ module.exports = {
 		// Collect on interaction, update message and update json
 		collector.on('collect', async i => {
 			if (i.customId === cidRoll.name) {
-				i.component.setDisabled(true);
-				i.component.setStyle('SECONDARY');
-				i.component.setLabel('CLAIMED!');
-				embed.setFooter(`Claimed by ${i.user.username}!`)
+				const row = new ActionRowBuilder()
+					.addComponents(
+          				(claim = new ButtonBuilder()
+            				.setDisabled(true)
+							.setCustomId(cidRoll.name)
+            				.setLabel("CLAIMED")
+            				.setStyle('Secondary'))
+        				);
+
+				const newFooter = `Claimed by ${i.user.username}!`
+
+				embed.setFooter({ text : newFooter })
 
 				await i.update({
 					embeds: [embed],
-					components: [new MessageActionRow().addComponents(i.component)],
+					components: [row],
 				});
 				await i.followUp(`${i.user.username} has claimed ${cidRoll.name}.`);
 				

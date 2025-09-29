@@ -14,8 +14,8 @@
  "2": {
   "name": "Not Cid",
   "link": "https://i.imgur.com/9LoSduw.jpg",
-  "claimed": false,
-  "owner": ""
+  "claimed": true,
+  "owner": "Manaro"
  },
  "3": {
   "name": "Cid legs",
@@ -26,8 +26,8 @@
  "4": {
   "name": "Cid profile",
   "link": "https://i.imgur.com/VCAOknT.jpg",
-  "claimed": false,
-  "owner": ""
+  "claimed": true,
+  "owner": "Manaro"
  },
  "5": {
   "name": "Cid model",
@@ -62,8 +62,8 @@
  "10": {
   "name": "Baby Cid Sleep",
   "link": "https://i.imgur.com/puZA4ZB.png",
-  "claimed": false,
-  "owner": ""
+  "claimed": true,
+  "owner": "Manaro"
  },
  "11": {
   "name": "Cididan",
